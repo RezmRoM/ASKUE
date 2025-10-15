@@ -6,11 +6,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using ASKUE.Classes;
 
 namespace ASKUE.Pages
 {
-    public class ResourceType { public int Id { get; set; } public string Name { get; set; } }
-
     public partial class AddEditMeterPage : Page
     {
         private K_Schetchiki _current;
@@ -47,9 +46,7 @@ namespace ASKUE.Pages
             var resourceTypes = new List<ResourceType>();
             try
             {
-                var entityConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\\"";
-                var builder = new EntityConnectionStringBuilder(entityConnectionString);
-                string sqlConnectionString = builder.ProviderConnectionString;
+                string sqlConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
                 using (var c = new SqlConnection(sqlConnectionString))
                 {
                     c.Open();

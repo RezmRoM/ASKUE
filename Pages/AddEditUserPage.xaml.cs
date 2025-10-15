@@ -21,9 +21,7 @@ namespace ASKUE.Pages
             InitializeComponent();
             try
             {
-                var entityConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\\"";
-                var builder = new EntityConnectionStringBuilder(entityConnectionString);
-                _sqlConnectionString = builder.ProviderConnectionString;
+                _sqlConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
 
                 LoadRoles();
                 _currentUser = user;

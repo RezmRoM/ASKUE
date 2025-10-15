@@ -64,78 +64,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddEditUserWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AddReadingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddEditUserWindow.xaml.cs">
-      <DependentUpon>AddEditUserWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AddReadingWindow.xaml.cs">
-      <DependentUpon>AddReadingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Models\ASKUE_DBEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ASKUE_DBEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ASKUE_DBEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ASKUE_DBEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ASKUE_DBEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\AppContext.cs" />
-    <Compile Include="Models\K_Kvartiry.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_Pokazaniya.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_Polzovateli.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_Prozhivayushchiye.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_Roli.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_Schetchiki.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_Tarify.cs">
-      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="AddEditApartmentWindow.xaml">
+    <Page Include="Pages\AddEditApartmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddEditMeterWindow.xaml">
+    <Page Include="Pages\AddEditMeterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddEditTariffWindow.xaml">
+    <Page Include="Pages\AddEditTariffPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddReadingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,16 +116,68 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ASKUE_DBEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASKUE_DBEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASKUE_DBEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASKUE_DBEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASKUE_DBEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AppContext.cs" />
+    <Compile Include="Classes\ResourceType.cs" />
+    <Compile Include="Models\K_Kvartiry.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_Pokazaniya.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_Polzovateli.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_Prozhivayushchiye.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_Roli.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_Schetchiki.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_Tarify.cs">
+      <DependentUpon>ASKUE_DBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEditApartmentWindow.xaml.cs">
-      <DependentUpon>AddEditApartmentWindow.xaml</DependentUpon>
+    <Compile Include="Pages\AddEditApartmentPage.xaml.cs">
+      <DependentUpon>AddEditApartmentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddEditMeterWindow.xaml.cs">
-      <DependentUpon>AddEditMeterWindow.xaml</DependentUpon>
+    <Compile Include="Pages\AddEditMeterPage.xaml.cs">
+      <DependentUpon>AddEditMeterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddEditTariffWindow.xaml.cs">
-      <DependentUpon>AddEditTariffWindow.xaml</DependentUpon>
+    <Compile Include="Pages\AddEditTariffPage.xaml.cs">
+      <DependentUpon>AddEditTariffPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditUserPage.xaml.cs">
+      <DependentUpon>AddEditUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddReadingPage.xaml.cs">
+      <DependentUpon>AddReadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
