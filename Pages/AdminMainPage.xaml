@@ -1,0 +1,194 @@
+﻿<Page x:Class="ASKUE.Pages.AdminMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="Панель администратора">
+    <Grid>
+        <TabControl Name="MainTabControl" SelectionChanged="MainTabControl_SelectionChanged">
+            <!--==================== ВКЛАДКА ПОЛЬЗОВАТЕЛИ ====================-->
+            <TabItem Header="Пользователи">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                        <ComboBox Margin="5" Width="180" Name="ComboSortUser" SelectionChanged="UpdateUsersView" Text="Сортировка по ФИО">
+                            <ComboBoxItem Content="По возрастанию (А-Я)"/>
+                            <ComboBoxItem Content="По убыванию (Я-А)"/>
+                        </ComboBox>
+                        <ComboBox Margin="5" Width="180" Name="ComboFilterRole" SelectionChanged="UpdateUsersView" Text="Фильтр по роли"/>
+                        <TextBox Name="TBoxSearchUser" Width="200" Margin="5" TextChanged="UpdateUsersView" ToolTip="Поиск по ФИО или логину"/>
+                    </StackPanel>
+                    <ListView Grid.Row="1" Name="LViewUsers" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#6366f1" CornerRadius="8" BorderThickness="1" Padding="10" Background="White" Margin="8" Width="300">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Fio}" FontWeight="Bold" FontSize="16" Margin="0,0,0,5" TextWrapping="Wrap"/>
+                                        <Separator/>
+                                        <TextBlock Margin="0,5,0,2"><Run Text="Логин:" FontWeight="SemiBold"/> <Run Text="{Binding Login}"/></TextBlock>
+                                        <TextBlock><Run Text="Роль:" FontWeight="SemiBold"/> <Run Text="{Binding RoleName}"/></TextBlock>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                                            <Button Content="Редактировать" Name="BtnEditUser" Click="BtnEditUser_Click" Width="110" Height="30"/>
+                                            <Button Content="Удалить" Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Width="80" Height="30"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                        <TextBlock Name="TextBlockUserCount" VerticalAlignment="Center"/>
+                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddUser" Click="BtnAddUser_Click" Content="Добавить пользователя"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!--==================== ВКЛАДКА КВАРТИРЫ ====================-->
+            <TabItem Header="Квартиры">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                        <ComboBox Margin="5" Width="180" Name="ComboSortApartment" SelectionChanged="UpdateApartmentsView" Text="Сортировка по адресу">
+                            <ComboBoxItem Content="По возрастанию (А-Я)"/>
+                            <ComboBoxItem Content="По убыванию (Я-А)"/>
+                        </ComboBox>
+                        <TextBox Name="TBoxSearchApartment" Width="200" Margin="5" TextChanged="UpdateApartmentsView" ToolTip="Поиск по адресу или ФИО жильца"/>
+                    </StackPanel>
+                    <ListView Grid.Row="1" Name="LViewApartments" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#22c55e" CornerRadius="8" BorderThickness="1" Padding="10" Background="White" Margin="8" Width="300">
+                                    <StackPanel>
+                                        <TextBlock FontWeight="Bold" FontSize="16" Margin="0,0,0,5" TextWrapping="Wrap">
+                                            <Run Text="{Binding Address}"/>, кв. <Run Text="{Binding Number}"/>
+                                        </TextBlock>
+                                        <Separator/>
+                                        <TextBlock Margin="0,5,0,2"><Run Text="Проживающий:" FontWeight="SemiBold"/> <Run Text="{Binding ResidentFio}"/></TextBlock>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                                            <Button Content="Редактировать" Name="BtnEditApartment" Click="BtnEditApartment_Click" Width="110" Height="30"/>
+                                            <Button Content="Удалить" Name="BtnDeleteApartment" Click="BtnDeleteApartment_Click" Width="80" Height="30"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                        <TextBlock Name="TextBlockApartmentCount" VerticalAlignment="Center"/>
+                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddApartment" Click="BtnAddApartment_Click" Content="Добавить квартиру"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!--==================== ВКЛАДКА СЧЕТЧИКИ ====================-->
+            <TabItem Header="Счетчики">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- !!! ИСПРАВЛЕНО: Добавлена панель поиска !!! -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                        <TextBox Name="TBoxSearchMeter" Width="300" Margin="5" TextChanged="UpdateMetersView" ToolTip="Поиск по серийному номеру или адресу"/>
+                    </StackPanel>
+
+                    <ListView Grid.Row="1" Name="LViewMeters" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#8b5cf6" CornerRadius="8" BorderThickness="1" Padding="10" Background="White" Margin="8" Width="300">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding SerialNumber}" FontWeight="Bold" FontSize="16" Margin="0,0,0,5" TextWrapping="Wrap"/>
+                                        <Separator/>
+                                        <TextBlock Margin="0,5,0,2"><Run Text="Ресурс:" FontWeight="SemiBold"/> <Run Text="{Binding ResourceType}"/></TextBlock>
+                                        <TextBlock Margin="0,0,0,2"><Run Text="Квартира:" FontWeight="SemiBold"/> <Run Text="{Binding ApartmentAddress}"/></TextBlock>
+                                        <TextBlock><Run Text="Установлен:" FontWeight="SemiBold"/> <Run Text="{Binding InstallDate, StringFormat='dd.MM.yyyy'}"/></TextBlock>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                                            <Button Content="Редактировать" Name="BtnEditMeter" Click="BtnEditMeter_Click" Width="110" Height="30"/>
+                                            <Button Content="Удалить" Name="BtnDeleteMeter" Click="BtnDeleteMeter_Click" Width="80" Height="30"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                        <TextBlock Name="TextBlockMeterCount" VerticalAlignment="Center"/>
+                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddMeter" Click="BtnAddMeter_Click" Content="Добавить счетчик"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!--==================== ВКЛАДКА ТАРИФЫ ====================-->
+            <TabItem Header="Тарифы">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                        <ComboBox Margin="5" Width="180" Name="ComboSortTariff" SelectionChanged="UpdateTariffsView" Text="Сортировка по стоимости">
+                            <ComboBoxItem Content="По возрастанию"/>
+                            <ComboBoxItem Content="По убыванию"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <ListView Grid.Row="1" Name="LViewTariffs" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#f59e0b" CornerRadius="8" BorderThickness="1" Padding="10" Background="White" Margin="8" Width="300">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding ResourceType}" FontWeight="Bold" FontSize="16" Margin="0,0,0,5" TextWrapping="Wrap"/>
+                                        <Separator/>
+                                        <TextBlock Margin="0,5,0,2" FontSize="18"><Run Text="Стоимость:" FontWeight="SemiBold"/> <Run Text="{Binding CostString}"/></TextBlock>
+                                        <TextBlock><Run Text="Действует с:" FontWeight="SemiBold"/> <Run Text="{Binding StartDate, StringFormat='dd.MM.yyyy'}"/></TextBlock>
+                                        <TextBlock Visibility="{Binding EndDateVisibility}"><Run Text="Действует по:" FontWeight="SemiBold"/> <Run Text="{Binding EndDate, StringFormat='dd.MM.yyyy'}"/></TextBlock>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                                            <Button Content="Редактировать" Name="BtnEditTariff" Click="BtnEditTariff_Click" Width="110" Height="30"/>
+                                            <Button Content="Удалить" Name="BtnDeleteTariff" Click="BtnDeleteTariff_Click" Width="80" Height="30"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                        <TextBlock Name="TextBlockTariffCount" VerticalAlignment="Center"/>
+                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddTariff" Click="BtnAddTariff_Click" Content="Добавить тариф"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

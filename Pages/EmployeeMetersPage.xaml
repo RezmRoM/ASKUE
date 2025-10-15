@@ -1,0 +1,36 @@
+﻿<Page x:Class="ASKUE.Pages.EmployeeMetersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ASKUE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeeMetersPage">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Управление тарифами" HorizontalAlignment="Left" Name="BtnGoToTariffs" Click="BtnGoToTariffs_Click"/>
+
+        <DataGrid Name="MetersGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Серийный номер" Binding="{Binding SeriyniyNomer}" Width="*"/>
+                <DataGridTextColumn Header="Квартира" Binding="{Binding AdresKvartiry}" Width="*"/>
+                <DataGridTextColumn Header="Тип ресурса" Binding="{Binding TipResursa}" Width="*"/>
+                <DataGridTextColumn Header="Дата установки" Binding="{Binding DataUstanovki, StringFormat='dd.MM.yyyy'}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click"/>
+            <Button Content="Редактировать" IsEnabled="False"/>
+            <Button Content="Удалить" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Page>

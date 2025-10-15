@@ -1,0 +1,16 @@
+﻿<Window x:Class="ASKUE.Windows.AddEditMeterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Счетчик" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="15">
+        <TextBlock Text="Серийный номер:"/>
+        <TextBox Text="{Binding seriyniy_nomer}"/>
+        <TextBlock Text="Квартира:" Margin="0,10,0,0"/>
+        <ComboBox Name="ComboApartment" SelectedValue="{Binding id_kvartiry}"/>
+        <TextBlock Text="Тип ресурса:" Margin="0,10,0,0"/>
+        <ComboBox Name="ComboResourceType" DisplayMemberPath="naimenovaniye" SelectedValuePath="tip_resursa_id" SelectedValue="{Binding id_tipa_resursa}"/>
+        <TextBlock Text="Дата установки:" Margin="0,10,0,0"/>
+        <DatePicker SelectedDate="{Binding data_ustanovki}"/>
+        <Button Content="Сохранить" Click="BtnSave_Click" Margin="0,30,0,0"/>
+    </StackPanel>
+</Window>

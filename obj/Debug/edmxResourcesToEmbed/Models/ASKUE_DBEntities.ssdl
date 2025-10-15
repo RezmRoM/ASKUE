@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище user182_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="K_Kvartiry">
+    <Key>
+      <PropertyRef Name="kvartira_id" />
+    </Key>
+    <Property Name="kvartira_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adres" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nomer_kvartiry" Type="int" Nullable="false" />
+    <Property Name="ploshchad" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="K_Pokazaniya">
+    <Key>
+      <PropertyRef Name="pokazaniye_id" />
+    </Key>
+    <Property Name="pokazaniye_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data_snyatiya" Type="date" Nullable="false" />
+    <Property Name="znacheniye" Type="int" Nullable="false" />
+    <Property Name="id_schetchika" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="K_Polzovateli">
+    <Key>
+      <PropertyRef Name="polzovatel_id" />
+    </Key>
+    <Property Name="polzovatel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="parol" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fio" Type="varchar" MaxLength="150" />
+    <Property Name="id_rol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="K_Prozhivayushchiye">
+    <Key>
+      <PropertyRef Name="prozhivayushchiy_id" />
+    </Key>
+    <Property Name="prozhivayushchiy_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_polzovatelya" Type="int" Nullable="false" />
+    <Property Name="id_kvartiry" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="K_Roli">
+    <Key>
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="rol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naimenovaniye" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="K_Schetchiki">
+    <Key>
+      <PropertyRef Name="schetchik_id" />
+    </Key>
+    <Property Name="schetchik_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seriyniy_nomer" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="data_ustanovki" Type="date" />
+    <Property Name="id_kvartiry" Type="int" Nullable="false" />
+    <Property Name="id_tipa_resursa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="K_Tarify">
+    <Key>
+      <PropertyRef Name="tarif_id" />
+    </Key>
+    <Property Name="tarif_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stoimost_za_edinitsu" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="data_nachala_deystviya" Type="date" Nullable="false" />
+    <Property Name="data_okonchaniya_deystviya" Type="date" />
+    <Property Name="id_tipa_resursa" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__K_Pokazan__id_sc__7869D707">
+    <End Role="K_Schetchiki" Type="Self.K_Schetchiki" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="K_Pokazaniya" Type="Self.K_Pokazaniya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="K_Schetchiki">
+        <PropertyRef Name="schetchik_id" />
+      </Principal>
+      <Dependent Role="K_Pokazaniya">
+        <PropertyRef Name="id_schetchika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__K_Polzova__id_ro__664B26CC">
+    <End Role="K_Roli" Type="Self.K_Roli" Multiplicity="1" />
+    <End Role="K_Polzovateli" Type="Self.K_Polzovateli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="K_Roli">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="K_Polzovateli">
+        <PropertyRef Name="id_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__K_Prozhiv__id_kv__6C040022">
+    <End Role="K_Kvartiry" Type="Self.K_Kvartiry" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="K_Prozhivayushchiye" Type="Self.K_Prozhivayushchiye" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="K_Kvartiry">
+        <PropertyRef Name="kvartira_id" />
+      </Principal>
+      <Dependent Role="K_Prozhivayushchiye">
+        <PropertyRef Name="id_kvartiry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__K_Prozhiv__id_po__6B0FDBE9">
+    <End Role="K_Polzovateli" Type="Self.K_Polzovateli" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="K_Prozhivayushchiye" Type="Self.K_Prozhivayushchiye" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="K_Polzovateli">
+        <PropertyRef Name="polzovatel_id" />
+      </Principal>
+      <Dependent Role="K_Prozhivayushchiye">
+        <PropertyRef Name="id_polzovatelya" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__K_Schetch__id_kv__71BCD978">
+    <End Role="K_Kvartiry" Type="Self.K_Kvartiry" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="K_Schetchiki" Type="Self.K_Schetchiki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="K_Kvartiry">
+        <PropertyRef Name="kvartira_id" />
+      </Principal>
+      <Dependent Role="K_Schetchiki">
+        <PropertyRef Name="id_kvartiry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище user182_dbModelContainer">
+    <EntitySet Name="K_Kvartiry" EntityType="Self.K_Kvartiry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="K_Pokazaniya" EntityType="Self.K_Pokazaniya" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="K_Polzovateli" EntityType="Self.K_Polzovateli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="K_Prozhivayushchiye" EntityType="Self.K_Prozhivayushchiye" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="K_Roli" EntityType="Self.K_Roli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="K_Schetchiki" EntityType="Self.K_Schetchiki" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="K_Tarify" EntityType="Self.K_Tarify" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__K_Pokazan__id_sc__7869D707" Association="Self.FK__K_Pokazan__id_sc__7869D707">
+      <End Role="K_Schetchiki" EntitySet="K_Schetchiki" />
+      <End Role="K_Pokazaniya" EntitySet="K_Pokazaniya" />
+    </AssociationSet>
+    <AssociationSet Name="FK__K_Polzova__id_ro__664B26CC" Association="Self.FK__K_Polzova__id_ro__664B26CC">
+      <End Role="K_Roli" EntitySet="K_Roli" />
+      <End Role="K_Polzovateli" EntitySet="K_Polzovateli" />
+    </AssociationSet>
+    <AssociationSet Name="FK__K_Prozhiv__id_kv__6C040022" Association="Self.FK__K_Prozhiv__id_kv__6C040022">
+      <End Role="K_Kvartiry" EntitySet="K_Kvartiry" />
+      <End Role="K_Prozhivayushchiye" EntitySet="K_Prozhivayushchiye" />
+    </AssociationSet>
+    <AssociationSet Name="FK__K_Prozhiv__id_po__6B0FDBE9" Association="Self.FK__K_Prozhiv__id_po__6B0FDBE9">
+      <End Role="K_Polzovateli" EntitySet="K_Polzovateli" />
+      <End Role="K_Prozhivayushchiye" EntitySet="K_Prozhivayushchiye" />
+    </AssociationSet>
+    <AssociationSet Name="FK__K_Schetch__id_kv__71BCD978" Association="Self.FK__K_Schetch__id_kv__71BCD978">
+      <End Role="K_Kvartiry" EntitySet="K_Kvartiry" />
+      <End Role="K_Schetchiki" EntitySet="K_Schetchiki" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

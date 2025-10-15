@@ -1,0 +1,162 @@
+﻿<Application x:Class="ASKUE.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ASKUE"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!-- ==================== ЦВЕТОВАЯ ПАЛИТРА ==================== -->
+        <SolidColorBrush x:Key="ColorPrimary" Color="#4f46e5"/>
+        <!-- Основной акцентный цвет (индиго) -->
+        <SolidColorBrush x:Key="ColorPrimaryLight" Color="#6366f1"/>
+        <!-- Светлый оттенок акцентного -->
+        <SolidColorBrush x:Key="ColorText" Color="#111827"/>
+        <!-- Основной цвет текста (темно-серый) -->
+        <SolidColorBrush x:Key="ColorTextSecondary" Color="#6b7280"/>
+        <!-- Вторичный цвет текста (серый) -->
+        <SolidColorBrush x:Key="ColorBackground" Color="#f9fafb"/>
+        <!-- Цвет фона страниц -->
+        <SolidColorBrush x:Key="ColorBorder" Color="#e5e7eb"/>
+        <!-- Цвет границ -->
+
+        <!-- ==================== ШРИФТЫ ==================== -->
+        <FontFamily x:Key="FontMain">Segoe UI</FontFamily>
+
+        <!-- ==================== СТИЛИ ЭЛЕМЕНТОВ УПРАВЛЕНИЯ ==================== -->
+
+        <!-- Общий стиль для всех кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ColorPrimary}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinWidth" Value="80"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="6" BorderThickness="{TemplateBinding BorderThickness}">
+
+                            <!-- !!! ИСПРАВЛЕНО: Принудительно устанавливаем цвет текста через TextElement.Foreground !!! -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource ColorPrimaryLight}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#9ca3af"/>
+                                <Setter Property="Foreground" Value="#e5e7eb"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Общий стиль для полей ввода -->
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" CornerRadius="6" BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ColorPrimary}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Отдельный стиль для PasswordBox -->
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border x:Name="border" CornerRadius="6" BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ColorPrimary}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Общий стиль для ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Общий стиль для DatePicker -->
+        <Style TargetType="DatePicker">
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ColorBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- ==================== СТИЛИ ТЕКСТА ==================== -->
+
+        <!-- Стиль для заголовков -->
+        <Style TargetType="TextBlock" x:Key="HeaderTextStyle">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="Foreground" Value="{StaticResource ColorText}"/>
+        </Style>
+
+        <!-- Стиль для подписей к полям -->
+        <Style TargetType="TextBlock" x:Key="LabelTextStyle">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="Foreground" Value="{StaticResource ColorTextSecondary}"/>
+            <Setter Property="Margin" Value="5,10,5,2"/>
+        </Style>
+
+        <!-- Стиль по умолчанию для всего текста -->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource FontMain}"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,66 @@
+﻿<Page x:Class="ASKUE.Pages.SubmitReadingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ASKUE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Подача показаний">
+    <Grid Margin="40">
+        <StackPanel>
+            <TextBlock Text="Подача показаний" FontSize="28" FontWeight="Bold" Margin="0,0,0,30"/>
+
+            <!-- Заголовки для списка -->
+            <Border BorderBrush="#e5e7eb" BorderThickness="0,0,0,2" Padding="0,0,0,10" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Счетчик" FontWeight="SemiBold" Foreground="#6b7280"/>
+                    <TextBlock Grid.Column="1" Text="Новое показание" FontWeight="SemiBold" Foreground="#6b7280"/>
+                </Grid>
+            </Border>
+
+            <!-- Список счетчиков для ввода данных -->
+            <ItemsControl Name="MetersToSubmitItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="0,0,20,0" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding ResourceName}" FontSize="18" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding SerialNumber}" Foreground="Gray"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <!-- Используем Text="{Binding NewValueText}" для двусторонней привязки -->
+                                <TextBox Name="TBoxNewValue" Text="{Binding NewValueText, UpdateSourceTrigger=PropertyChanged}" 
+                                         Tag="{Binding MeterId}" TextChanged="TBoxNewValue_TextChanged"
+                                         FontSize="18" Padding="5" Width="150" HorizontalAlignment="Left"/>
+                                <TextBlock Foreground="#6b7280" Margin="5,2,0,0">
+                                    <Run Text="Предыдущее:"/>
+                                    <Run Text="{Binding LastValue}"/>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <!-- Место для подсказки об ошибке -->
+                            <TextBlock Name="ErrorHint" Grid.Column="2" VerticalAlignment="Center" Foreground="Red" FontWeight="Bold" TextWrapping="Wrap"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Button Name="BtnSend" Content="Отправить показания" Height="50" Width="250" 
+                    FontSize="18" HorizontalAlignment="Left" Margin="0,30,0,0" Click="BtnSend_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

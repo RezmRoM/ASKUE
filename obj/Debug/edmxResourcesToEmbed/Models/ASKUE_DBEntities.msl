@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище user182_dbModelContainer" CdmEntityContainer="user182_dbEntities">
+    <EntitySetMapping Name="K_Kvartiry">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Kvartiry">
+        <MappingFragment StoreEntitySet="K_Kvartiry">
+          <ScalarProperty Name="kvartira_id" ColumnName="kvartira_id" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="nomer_kvartiry" ColumnName="nomer_kvartiry" />
+          <ScalarProperty Name="ploshchad" ColumnName="ploshchad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="K_Pokazaniya">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Pokazaniya">
+        <MappingFragment StoreEntitySet="K_Pokazaniya">
+          <ScalarProperty Name="pokazaniye_id" ColumnName="pokazaniye_id" />
+          <ScalarProperty Name="data_snyatiya" ColumnName="data_snyatiya" />
+          <ScalarProperty Name="znacheniye" ColumnName="znacheniye" />
+          <ScalarProperty Name="id_schetchika" ColumnName="id_schetchika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="K_Polzovateli">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Polzovateli">
+        <MappingFragment StoreEntitySet="K_Polzovateli">
+          <ScalarProperty Name="polzovatel_id" ColumnName="polzovatel_id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="parol" ColumnName="parol" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="K_Prozhivayushchiye">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Prozhivayushchiye">
+        <MappingFragment StoreEntitySet="K_Prozhivayushchiye">
+          <ScalarProperty Name="prozhivayushchiy_id" ColumnName="prozhivayushchiy_id" />
+          <ScalarProperty Name="id_polzovatelya" ColumnName="id_polzovatelya" />
+          <ScalarProperty Name="id_kvartiry" ColumnName="id_kvartiry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="K_Roli">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Roli">
+        <MappingFragment StoreEntitySet="K_Roli">
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="naimenovaniye" ColumnName="naimenovaniye" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="K_Schetchiki">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Schetchiki">
+        <MappingFragment StoreEntitySet="K_Schetchiki">
+          <ScalarProperty Name="schetchik_id" ColumnName="schetchik_id" />
+          <ScalarProperty Name="seriyniy_nomer" ColumnName="seriyniy_nomer" />
+          <ScalarProperty Name="data_ustanovki" ColumnName="data_ustanovki" />
+          <ScalarProperty Name="id_kvartiry" ColumnName="id_kvartiry" />
+          <ScalarProperty Name="id_tipa_resursa" ColumnName="id_tipa_resursa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="K_Tarify">
+      <EntityTypeMapping TypeName="user182_dbModel.K_Tarify">
+        <MappingFragment StoreEntitySet="K_Tarify">
+          <ScalarProperty Name="tarif_id" ColumnName="tarif_id" />
+          <ScalarProperty Name="stoimost_za_edinitsu" ColumnName="stoimost_za_edinitsu" />
+          <ScalarProperty Name="data_nachala_deystviya" ColumnName="data_nachala_deystviya" />
+          <ScalarProperty Name="data_okonchaniya_deystviya" ColumnName="data_okonchaniya_deystviya" />
+          <ScalarProperty Name="id_tipa_resursa" ColumnName="id_tipa_resursa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

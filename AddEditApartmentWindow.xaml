@@ -1,0 +1,14 @@
+﻿<Window x:Class="ASKUE.Windows.AddEditApartmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Квартира" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="15">
+        <TextBlock Text="Адрес дома:"/>
+        <TextBox Text="{Binding adres}"/>
+        <TextBlock Text="Номер квартиры:" Margin="0,10,0,0"/>
+        <TextBox Text="{Binding nomer_kvartiry}"/>
+        <TextBlock Text="Проживающий (Пользователь):" Margin="0,10,0,0"/>
+        <ComboBox Name="ComboResident" DisplayMemberPath="fio" SelectedValuePath="polzovatel_id"/>
+        <Button Content="Сохранить" Click="BtnSave_Click" Margin="0,30,0,0"/>
+    </StackPanel>
+</Window>

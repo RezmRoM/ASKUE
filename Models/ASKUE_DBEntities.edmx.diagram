@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de4bb535026a44cc90e8c86df22c66ab" Name="Diagram1">
+        <EntityTypeShape EntityType="user182_dbModel.K_Kvartiry" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user182_dbModel.K_Pokazaniya" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user182_dbModel.K_Polzovateli" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user182_dbModel.K_Prozhivayushchiye" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user182_dbModel.K_Roli" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="user182_dbModel.K_Schetchiki" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user182_dbModel.K_Tarify" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="user182_dbModel.FK__K_Prozhiv__id_kv__6C040022" ManuallyRouted="false" />
+        <AssociationConnector Association="user182_dbModel.FK__K_Schetch__id_kv__71BCD978" ManuallyRouted="false" />
+        <AssociationConnector Association="user182_dbModel.FK__K_Pokazan__id_sc__7869D707" ManuallyRouted="false" />
+        <AssociationConnector Association="user182_dbModel.FK__K_Polzova__id_ro__664B26CC" ManuallyRouted="false" />
+        <AssociationConnector Association="user182_dbModel.FK__K_Prozhiv__id_po__6B0FDBE9" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

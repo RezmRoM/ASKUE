@@ -1,0 +1,45 @@
+﻿<Page x:Class="ASKUE.Pages.UserDashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Моя панель">
+    <Grid Background="#f0f2f5">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="40">
+                <TextBlock Name="TBlockAddress" Text="Загрузка адреса..." FontSize="20" FontWeight="SemiBold" Foreground="#4b5563" Margin="0,0,0,20"/>
+                <Border Background="White" CornerRadius="8" Padding="30" Margin="0,0,0,30">
+                    <StackPanel>
+                        <TextBlock Text="К оплате за прошлый месяц:" FontSize="18" Foreground="#6b7280"/>
+                        <TextBlock Name="TBlockTotalCost" Text="Расчет..." FontSize="48" FontWeight="Bold" Foreground="#1f2937" Margin="0,5,0,20"/>
+                    </StackPanel>
+                </Border>
+                <Button Name="BtnSubmitReadings" Height="60" FontSize="22" FontWeight="Bold" Content="Подать показания за текущий месяц" Click="BtnSubmitReadings_Click" Margin="0,0,0,30"/>
+                <TextBlock Text="Сводка за прошлый месяц" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,15"/>
+                <ItemsControl Name="MetersDataItemsControl">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{Binding Color}" CornerRadius="8" Padding="20" Margin="0,0,20,20" MinWidth="250">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding ResourceName}" FontSize="16" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,12"/>
+                                    <TextBlock Foreground="White" Opacity="0.9">
+                                        <Run Text="Расход:"/>
+                                        <Run Text="{Binding Consumption}"/>
+                                        <Run Text="{Binding Unit}"/>
+                                        <Run Text="("/>
+                                        <!-- !!! ИСПРАВЛЕНО: Binding теперь на CostString !!! -->
+                                        <Run Text="{Binding CostString}"/>
+                                        <Run Text=")"/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
