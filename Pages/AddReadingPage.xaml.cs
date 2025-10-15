@@ -1,23 +1,22 @@
-﻿using ASKUE.Models;
+using ASKUE.Models;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 
-namespace ASKUE
+namespace ASKUE.Pages
 {
-    // !!! ИСПРАВЛЕНО: Убрана лишняя вложенность классов !!!
-    public partial class AddReadingWindow : Window
+    public partial class AddReadingPage : Page
     {
         private K_Schetchiki _currentMeter;
-        public AddReadingWindow(K_Schetchiki meter)
+        public AddReadingPage(K_Schetchiki meter)
         {
-            InitializeComponent(); // Теперь эта строка будет работать
+            InitializeComponent();
             _currentMeter = meter;
             Title += $" ({_currentMeter.seriyniy_nomer})";
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            // TBoxValue теперь будет виден
             if (int.TryParse(TBoxValue.Text, out int value))
             {
                 var newReading = new K_Pokazaniya
@@ -26,11 +25,9 @@ namespace ASKUE
                     znacheniye = value,
                     data_snyatiya = DateTime.Now
                 };
-                // Используем полный путь к AppContext во избежание конфликтов
                 Classes.AppContext.GetContext().K_Pokazaniya.Add(newReading);
                 Classes.AppContext.GetContext().SaveChanges();
-                DialogResult = true;
-                Close();
+                NavigationService.GoBack();
             }
             else MessageBox.Show("Введите корректное числовое значение.");
         }

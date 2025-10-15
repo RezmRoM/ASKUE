@@ -1,26 +1,27 @@
-﻿using ASKUE.Classes;
+using ASKUE.Classes;
 using ASKUE.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.EntityClient;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Windows.Controls;
 
-namespace ASKUE.Windows
+namespace ASKUE.Pages
 {
     public class Role { public int Id { get; set; } public string Name { get; set; } }
 
-    public partial class AddEditUserWindow : Window
+    public partial class AddEditUserPage : Page
     {
         private K_Polzovateli _currentUser;
         private string _sqlConnectionString;
 
-        public AddEditUserWindow(K_Polzovateli user)
+        public AddEditUserPage(K_Polzovateli user)
         {
             InitializeComponent();
             try
             {
-                var entityConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\"";
+                var entityConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\\"";
                 var builder = new EntityConnectionStringBuilder(entityConnectionString);
                 _sqlConnectionString = builder.ProviderConnectionString;
 
@@ -41,7 +42,7 @@ namespace ASKUE.Windows
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка инициализации окна: " + ex.Message);
+                MessageBox.Show("Ошибка инициализации страницы: " + ex.Message);
             }
         }
 
@@ -94,7 +95,7 @@ namespace ASKUE.Windows
             {
                 Classes.AppContext.GetContext().SaveChanges();
                 MessageBox.Show("Данные успешно сохранены.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
+                NavigationService.GoBack();
             }
             catch (Exception ex)
             {
