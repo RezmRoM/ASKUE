@@ -21,7 +21,9 @@ namespace ASKUE.Pages
             InitializeComponent();
             try
             {
-                _sqlConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
+                var entityConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["user182_dbEntities"].ConnectionString;
+                var builder = new EntityConnectionStringBuilder(entityConnectionString);
+                _sqlConnectionString = builder.ProviderConnectionString;
 
                 LoadRoles();
                 _currentUser = user;

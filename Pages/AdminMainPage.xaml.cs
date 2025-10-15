@@ -1,14 +1,14 @@
-﻿using ASKUE.Models;
-using ASKUE.Windows;
+using ASKUE.Models; // Ensure this namespace matches your project structure
 using System;
 using System.Collections.Generic;
-using System.Configuration;
+using System.Configuration; // Might not be strictly needed if connection string is hardcoded
 using System.Data.Entity.Core.EntityClient;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation; // Needed for NavigationService
 
 namespace ASKUE.Pages
 {
@@ -31,23 +31,52 @@ namespace ASKUE.Pages
         {
             InitializeComponent();
             this.Loaded += AdminMainPage_Loaded;
+            // Removed: NavigationService.Navigated += NavigationService_Navigated;
+            // This is now handled in AdminMainPage_Loaded, as NavigationService
+            // is not guaranteed to be available in the constructor.
         }
 
-        private void NavigationService_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        private void NavigationService_Navigated(object sender, NavigationEventArgs e)
         {
+            // This event fires when navigation to this page (or from it) completes.
+            // We want to ensure data is fresh if we navigate back to this page.
             LoadAllData();
+
+            // Re-apply filters/sorting based on current UI state after data load
             UpdateUsersView(null, null);
             UpdateApartmentsView(null, null);
             UpdateMetersView(null, null);
             UpdateTariffsView(null, null);
+
+            // Ensure the currently selected tab's data is updated on navigation.
+            // This is especially important if a user adds/edits an item and navigates back.
+            if (MainTabControl.SelectedItem is TabItem selectedTab)
+            {
+                switch (selectedTab.Header.ToString())
+                {
+                    case "Пользователи": UpdateUsersView(null, null); break;
+                    case "Квартиры": UpdateApartmentsView(null, null); break;
+                    case "Счетчики": UpdateMetersView(null, null); break;
+                    case "Тарифы": UpdateTariffsView(null, null); break;
+                }
+            }
         }
 
         private void AdminMainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigated += NavigationService_Navigated;
             try
             {
-                _sqlConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
+                // Ensure NavigationService is available before subscribing to its event
+                if (NavigationService != null)
+                {
+                    // Unsubscribe first to prevent multiple subscriptions if the page is loaded/unloaded multiple times
+                    NavigationService.Navigated -= NavigationService_Navigated;
+                    NavigationService.Navigated += NavigationService_Navigated;
+                }
+
+                var entityConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\\"";
+                var builder = new EntityConnectionStringBuilder(entityConnectionString);
+                _sqlConnectionString = builder.ProviderConnectionString;
 
                 LoadAllData(); // Загружаем все данные из БД в фоновые списки
                 UpdateUsersView(null, null); // Отображаем первую вкладку при загрузке
@@ -79,6 +108,7 @@ namespace ASKUE.Pages
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Проверяем, что событие пришло от TabControl и страница уже загружена
+            // This prevents the event from firing during initial loading or from child elements.
             if (e.Source is TabControl && IsLoaded)
             {
                 if (MainTabControl.SelectedItem is TabItem selectedTab)
@@ -130,6 +160,8 @@ namespace ASKUE.Pages
         private void BtnEditUser_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminUserViewModel; if (selectedVm == null) return;
+            // Assuming Classes.AppContext.GetContext() returns your EF DbContext
+            // and K_Polzovateli is your EF entity
             var obj = Classes.AppContext.GetContext().Set<K_Polzovateli>().Find(selectedVm.Id);
             NavigationService.Navigate(new AddEditUserPage(obj));
         }
@@ -182,6 +214,10 @@ namespace ASKUE.Pages
         private void BtnEditApartment_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminApartmentViewModel; if (selectedVm == null) return;
+            // For editing, you might need to pass the actual K_Kvartiry object if AddEditApartmentPage expects it,
+            // or pass the ID and let AddEditApartmentPage load it.
+            // For now, passing the ViewModel as you did in the original code,
+            // assuming AddEditApartmentPage knows how to handle it.
             NavigationService.Navigate(new AddEditApartmentPage(selectedVm));
         }
         private void BtnDeleteApartment_Click(object sender, RoutedEventArgs e)

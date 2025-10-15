@@ -35,7 +35,9 @@ namespace ASKUE.Pages
             var resourceTypes = new List<ResourceType>(); // Используем класс из AddEditMeterPage
             try
             {
-                string sqlConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["sqlConnectionString"].ConnectionString;
+                var entityConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["user182_dbEntities"].ConnectionString;
+                var builder = new EntityConnectionStringBuilder(entityConnectionString);
+                string sqlConnectionString = builder.ProviderConnectionString;
                 using (var c = new SqlConnection(sqlConnectionString))
                 {
                     c.Open();

@@ -8,10 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddReadingPage">
     <Grid>
-        <StackPanel VerticalAlignment="Center" Margin="10">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300">
             <TextBlock Text="Новое значение:" Margin="5"/>
             <TextBox Name="TBoxValue"/>
-            <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Margin="5,20,5,5"/>
+            <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Margin="5,20,5,5" MinWidth="100"/>
         </StackPanel>
     </Grid>
 </Page>
