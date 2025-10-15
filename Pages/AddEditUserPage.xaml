@@ -7,19 +7,21 @@
       mc:Ignorable="d"
       d:DesignHeight="400" d:DesignWidth="350"
       Title="Пользователь">
-    <StackPanel Margin="15">
-        <TextBlock Text="ФИО:"/>
-        <TextBox Name="TBoxFio" Text="{Binding fio}"/>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300">
+            <TextBlock Text="ФИО:"/>
+            <TextBox Name="TBoxFio" Text="{Binding fio}"/>
 
-        <TextBlock Text="Логин:" Margin="0,10,0,0"/>
-        <TextBox Name="TBoxLogin" Text="{Binding login}"/>
+            <TextBlock Text="Логин:" Margin="0,10,0,0"/>
+            <TextBox Name="TBoxLogin" Text="{Binding login}"/>
 
-        <TextBlock Text="Пароль:" Margin="0,10,0,0"/>
-        <TextBox Name="TBoxPassword" ToolTip="Оставьте пустым, чтобы не менять пароль"/>
+            <TextBlock Text="Пароль:" Margin="0,10,0,0"/>
+            <TextBox Name="TBoxPassword" ToolTip="Оставьте пустым, чтобы не менять пароль"/>
 
-        <TextBlock Text="Роль:" Margin="0,10,0,0"/>
-        <ComboBox Name="ComboRole" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedValue="{Binding id_rol}"/>
+            <TextBlock Text="Роль:" Margin="0,10,0,0"/>
+            <ComboBox Name="ComboRole" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedValue="{Binding id_rol}"/>
 
-        <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Margin="0,30,0,0"/>
-    </StackPanel>
+            <Button Content="Сохранить" Name="BtnSave" Click="BtnSave_Click" Margin="0,30,0,0" MinWidth="100"/>
+        </StackPanel>
+    </Grid>
 </Page>
