@@ -31,6 +31,16 @@ namespace ASKUE.Pages
         {
             InitializeComponent();
             this.Loaded += AdminMainPage_Loaded;
+            NavigationService.Navigated += NavigationService_Navigated;
+        }
+
+        private void NavigationService_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            LoadAllData();
+            UpdateUsersView(null, null);
+            UpdateApartmentsView(null, null);
+            UpdateMetersView(null, null);
+            UpdateTariffsView(null, null);
         }
 
         private void AdminMainPage_Loaded(object sender, RoutedEventArgs e)
@@ -115,12 +125,15 @@ namespace ASKUE.Pages
             LViewUsers.ItemsSource = currentUsers.ToList();
             TextBlockUserCount.Text = $"Найдено: {currentUsers.Count()} из {_allUsers.Count}";
         }
-        private void BtnAddUser_Click(object sender, RoutedEventArgs e) { var window = new AddEditUserWindow(null); window.ShowDialog(); LoadAllData(); UpdateUsersView(null, null); }
+        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditUserPage(null));
+        }
         private void BtnEditUser_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminUserViewModel; if (selectedVm == null) return;
             var obj = Classes.AppContext.GetContext().Set<K_Polzovateli>().Find(selectedVm.Id);
-            var window = new AddEditUserWindow(obj); window.ShowDialog(); LoadAllData(); UpdateUsersView(null, null);
+            NavigationService.Navigate(new AddEditUserPage(obj));
         }
         private void BtnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
@@ -164,11 +177,14 @@ namespace ASKUE.Pages
             LViewApartments.ItemsSource = currentItems.ToList();
             TextBlockApartmentCount.Text = $"Найдено: {currentItems.Count()} из {_allApartments.Count}";
         }
-        private void BtnAddApartment_Click(object sender, RoutedEventArgs e) { var window = new AddEditApartmentWindow(null); window.ShowDialog(); LoadAllData(); UpdateApartmentsView(null, null); }
+        private void BtnAddApartment_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditApartmentPage(null));
+        }
         private void BtnEditApartment_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminApartmentViewModel; if (selectedVm == null) return;
-            var window = new AddEditApartmentWindow(selectedVm); window.ShowDialog(); LoadAllData(); UpdateApartmentsView(null, null);
+            NavigationService.Navigate(new AddEditApartmentPage(selectedVm));
         }
         private void BtnDeleteApartment_Click(object sender, RoutedEventArgs e)
         {
@@ -210,12 +226,15 @@ namespace ASKUE.Pages
             LViewMeters.ItemsSource = currentItems.OrderBy(m => m.SerialNumber).ToList();
             TextBlockMeterCount.Text = $"Найдено: {currentItems.Count()} из {_allMeters.Count}";
         }
-        private void BtnAddMeter_Click(object sender, RoutedEventArgs e) { var window = new AddEditMeterWindow(null); window.ShowDialog(); LoadAllData(); UpdateMetersView(null, null); }
+        private void BtnAddMeter_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditMeterPage(null));
+        }
         private void BtnEditMeter_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminMeterViewModel; if (selectedVm == null) return;
             var obj = Classes.AppContext.GetContext().Set<K_Schetchiki>().Find(selectedVm.Id);
-            var window = new AddEditMeterWindow(obj); window.ShowDialog(); LoadAllData(); UpdateMetersView(null, null);
+            NavigationService.Navigate(new AddEditMeterPage(obj));
         }
         private void BtnDeleteMeter_Click(object sender, RoutedEventArgs e)
         {
@@ -262,12 +281,15 @@ namespace ASKUE.Pages
             LViewTariffs.ItemsSource = currentItems.ToList();
             TextBlockTariffCount.Text = $"Найдено: {currentItems.Count()} из {_allTariffs.Count}";
         }
-        private void BtnAddTariff_Click(object sender, RoutedEventArgs e) { var window = new AddEditTariffWindow(null); window.ShowDialog(); LoadAllData(); UpdateTariffsView(null, null); }
+        private void BtnAddTariff_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditTariffPage(null));
+        }
         private void BtnEditTariff_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminTariffViewModel; if (selectedVm == null) return;
             var obj = Classes.AppContext.GetContext().Set<K_Tarify>().Find(selectedVm.Id);
-            var window = new AddEditTariffWindow(obj); window.ShowDialog(); LoadAllData(); UpdateTariffsView(null, null);
+            NavigationService.Navigate(new AddEditTariffPage(obj));
         }
         private void BtnDeleteTariff_Click(object sender, RoutedEventArgs e)
         {

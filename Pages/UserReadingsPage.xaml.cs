@@ -19,6 +19,12 @@ namespace ASKUE.Pages
                 var apartmentId = userLink.id_kvartiry;
                 ComboMeters.ItemsSource = ASKUE.Classes.AppContext.GetContext().K_Schetchiki.Where(s => s.id_kvartiry == apartmentId).ToList();
             }
+            NavigationService.Navigated += NavigationService_Navigated;
+        }
+
+        private void NavigationService_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            ComboMeters_SelectionChanged(null, null);
         }
 
         private void ComboMeters_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,11 +39,7 @@ namespace ASKUE.Pages
         {
             if (ComboMeters.SelectedItem is K_Schetchiki selectedMeter)
             {
-                var addWindow = new AddReadingWindow(selectedMeter);
-                if (addWindow.ShowDialog() == true)
-                {
-                    ComboMeters_SelectionChanged(null, null);
-                }
+                NavigationService.Navigate(new AddReadingPage(selectedMeter));
             }
             else
             {
