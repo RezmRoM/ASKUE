@@ -10,6 +10,11 @@ namespace ASKUE.Pages
         public UserReadingsPage()
         {
             InitializeComponent();
+            Loaded += UserReadingsPage_Loaded;
+        }
+
+        private void UserReadingsPage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
             // !!! ИСПРАВЛЕНО: Находим ID квартиры через связующую таблицу K_Prozhivayushchiye !!!
             var userLink = ASKUE.Classes.AppContext.GetContext().K_Prozhivayushchiye
                 .FirstOrDefault(p => p.id_polzovatelya == ASKUE.Classes.AppContext.CurrentUser.polzovatel_id);
