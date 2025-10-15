@@ -1,5 +1,4 @@
 ﻿using ASKUE.Models;
-using ASKUE.Windows;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation; // Important: ensure this is present for NavigationService
 
 namespace ASKUE.Pages
 {
@@ -31,22 +31,52 @@ namespace ASKUE.Pages
         {
             InitializeComponent();
             this.Loaded += AdminMainPage_Loaded;
-            NavigationService.Navigated += NavigationService_Navigated;
+            // THIS LINE WAS CAUSING THE NullReferenceException.
+            // NavigationService is not available during Page construction.
+            // It will be subscribed in AdminMainPage_Loaded.
+            // NavigationService.Navigated += NavigationService_Navigated; // REMOVE THIS LINE
         }
 
-        private void NavigationService_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        private void NavigationService_Navigated(object sender, NavigationEventArgs e) // Use System.Windows.Navigation.NavigationEventArgs
         {
             LoadAllData();
+            // After loading data, ensure UI is updated based on current filters/sort
             UpdateUsersView(null, null);
             UpdateApartmentsView(null, null);
             UpdateMetersView(null, null);
             UpdateTariffsView(null, null);
+
+            // Also explicitly update the view for the currently selected tab
+            if (MainTabControl.SelectedItem is TabItem selectedTab)
+            {
+                switch (selectedTab.Header.ToString())
+                {
+                    case "Пользователи": UpdateUsersView(null, null); break;
+                    case "Квартиры": UpdateApartmentsView(null, null); break;
+                    case "Счетчики": UpdateMetersView(null, null); break;
+                    case "Тарифы": UpdateTariffsView(null, null); break;
+                }
+            }
         }
 
         private void AdminMainPage_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
+                // Ensure NavigationService is available before subscribing to its event
+                if (NavigationService != null)
+                {
+                    // Unsubscribe first to prevent multiple subscriptions if the page is loaded/unloaded multiple times
+                    // (This is important if the page can be navigated away from and back to)
+                    NavigationService.Navigated -= NavigationService_Navigated;
+                    NavigationService.Navigated += NavigationService_Navigated;
+                }
+                else
+                {
+                    MessageBox.Show("NavigationService is not available. Ensure this page is hosted within a Frame or NavigationWindow.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
+
                 var entityConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\"";
                 var builder = new EntityConnectionStringBuilder(entityConnectionString);
                 _sqlConnectionString = builder.ProviderConnectionString;
@@ -69,18 +99,21 @@ namespace ASKUE.Pages
             // Заполняем фильтр ролей
             var roles = _allUsers.Select(u => u.RoleName).Distinct().ToList();
             roles.Insert(0, "Все роли");
-            ComboFilterRole.ItemsSource = roles;
-            // Устанавливаем значения по умолчанию для всех ComboBox
-            ComboSortUser.SelectedIndex = 0;
-            ComboFilterRole.SelectedIndex = 0;
-            ComboSortApartment.SelectedIndex = 0;
-            ComboSortTariff.SelectedIndex = 0;
+            if (ComboFilterRole != null) // Add null check for UI elements
+            {
+                ComboFilterRole.ItemsSource = roles;
+                // Устанавливаем значения по умолчанию для всех ComboBox
+                ComboFilterRole.SelectedIndex = 0;
+            }
+
+            // Add null checks for other ComboBoxes if they are not guaranteed to be initialized
+            if (ComboSortUser != null) ComboSortUser.SelectedIndex = 0;
+            if (ComboSortApartment != null) ComboSortApartment.SelectedIndex = 0;
+            if (ComboSortTariff != null) ComboSortTariff.SelectedIndex = 0;
         }
 
-        // !!! ИСПРАВЛЕНО: Этот метод теперь ГАРАНТИРОВАННО вызывает обновление нужной вкладки !!!
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Проверяем, что событие пришло от TabControl и страница уже загружена
             if (e.Source is TabControl && IsLoaded)
             {
                 if (MainTabControl.SelectedItem is TabItem selectedTab)
@@ -115,6 +148,8 @@ namespace ASKUE.Pages
         }
         private void UpdateUsersView(object sender, RoutedEventArgs e)
         {
+            if (ComboFilterRole == null || TBoxSearchUser == null || ComboSortUser == null || LViewUsers == null || TextBlockUserCount == null) return; // Defensive check
+
             var currentUsers = _allUsers.AsEnumerable();
             if (ComboFilterRole.SelectedIndex > 0)
                 currentUsers = currentUsers.Where(u => u.RoleName == ComboFilterRole.SelectedItem.ToString());
@@ -127,13 +162,19 @@ namespace ASKUE.Pages
         }
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditUserPage(null));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditUserPage(null));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnEditUser_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminUserViewModel; if (selectedVm == null) return;
             var obj = Classes.AppContext.GetContext().Set<K_Polzovateli>().Find(selectedVm.Id);
-            NavigationService.Navigate(new AddEditUserPage(obj));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditUserPage(obj));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
@@ -169,6 +210,8 @@ namespace ASKUE.Pages
         }
         private void UpdateApartmentsView(object sender, RoutedEventArgs e)
         {
+            if (TBoxSearchApartment == null || ComboSortApartment == null || LViewApartments == null || TextBlockApartmentCount == null) return; // Defensive check
+
             var currentItems = _allApartments.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(TBoxSearchApartment.Text))
                 currentItems = currentItems.Where(a => a.Address.ToLower().Contains(TBoxSearchApartment.Text.ToLower()) || a.ResidentFio.ToLower().Contains(TBoxSearchApartment.Text.ToLower()));
@@ -179,12 +222,18 @@ namespace ASKUE.Pages
         }
         private void BtnAddApartment_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditApartmentPage(null));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditApartmentPage(null));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnEditApartment_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminApartmentViewModel; if (selectedVm == null) return;
-            NavigationService.Navigate(new AddEditApartmentPage(selectedVm));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditApartmentPage(selectedVm));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnDeleteApartment_Click(object sender, RoutedEventArgs e)
         {
@@ -220,6 +269,8 @@ namespace ASKUE.Pages
         }
         private void UpdateMetersView(object sender, RoutedEventArgs e)
         {
+            if (TBoxSearchMeter == null || LViewMeters == null || TextBlockMeterCount == null) return; // Defensive check
+
             var currentItems = _allMeters.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(TBoxSearchMeter.Text))
                 currentItems = currentItems.Where(m => m.SerialNumber.ToLower().Contains(TBoxSearchMeter.Text.ToLower()) || m.ApartmentAddress.ToLower().Contains(TBoxSearchMeter.Text.ToLower()));
@@ -228,13 +279,19 @@ namespace ASKUE.Pages
         }
         private void BtnAddMeter_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditMeterPage(null));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditMeterPage(null));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnEditMeter_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminMeterViewModel; if (selectedVm == null) return;
             var obj = Classes.AppContext.GetContext().Set<K_Schetchiki>().Find(selectedVm.Id);
-            NavigationService.Navigate(new AddEditMeterPage(obj));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditMeterPage(obj));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnDeleteMeter_Click(object sender, RoutedEventArgs e)
         {
@@ -275,6 +332,8 @@ namespace ASKUE.Pages
         }
         private void UpdateTariffsView(object sender, RoutedEventArgs e)
         {
+            if (ComboSortTariff == null || LViewTariffs == null || TextBlockTariffCount == null) return; // Defensive check
+
             var currentItems = _allTariffs.AsEnumerable();
             if (ComboSortTariff.SelectedIndex == 0) currentItems = currentItems.OrderBy(t => t.Cost);
             else if (ComboSortTariff.SelectedIndex == 1) currentItems = currentItems.OrderByDescending(t => t.Cost);
@@ -283,13 +342,19 @@ namespace ASKUE.Pages
         }
         private void BtnAddTariff_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditTariffPage(null));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditTariffPage(null));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnEditTariff_Click(object sender, RoutedEventArgs e)
         {
             var selectedVm = ((Button)sender).DataContext as AdminTariffViewModel; if (selectedVm == null) return;
             var obj = Classes.AppContext.GetContext().Set<K_Tarify>().Find(selectedVm.Id);
-            NavigationService.Navigate(new AddEditTariffPage(obj));
+            if (NavigationService != null)
+                NavigationService.Navigate(new AddEditTariffPage(obj));
+            else
+                MessageBox.Show("NavigationService не доступен.", "Ошибка навигации", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnDeleteTariff_Click(object sender, RoutedEventArgs e)
         {

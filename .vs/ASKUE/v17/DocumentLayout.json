@@ -1,82 +1,93 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\",
+  "WorkspaceRootPath": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\addeditapartmentwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:addeditapartmentwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\addedittariffwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:addedittariffwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\addeditmeterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:addeditmeterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\addeditapartmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:addeditapartmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\addedituserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:addedituserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\submitreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\submitreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\adminmainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\adminmainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\adminmainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\askue\\pages\\adminuserspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\adminuserspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\askue\\pages\\addedituserpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\addedituserpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\askue\\pages\\addedittariffpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\addedittariffpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\askue\\pages\\addeditmeterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\addeditmeterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\askue\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\submitreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\submitreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\adminmainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\adminmainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\adminmainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\adminuserspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\adminuserspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\adminuserspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\userdashboardpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\userdashboardpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\userdashboardpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\userdashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\userdashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\userdashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\submitreadingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\submitreadingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\submitreadingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\employeemeterspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\employeemeterspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\employeemeterspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\userreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\userreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\userreadingspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|c:\\users\\roma_w\\desktop\\askue\\pages\\userreadingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\pages\\userreadingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E23A7050-6BD3-4B0E-A37E-56E50FD67B77}|ASKUE.csproj|solutionrelative:pages\\userreadingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditTariffWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditMeterWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditUserWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,78 +97,125 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddEditApartmentWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml",
-              "RelativeDocumentMoniker": "AddEditApartmentWindow.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml",
-              "RelativeToolTip": "AddEditApartmentWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T17:28:41.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AddEditTariffWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditTariffWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AddEditTariffWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditTariffWindow.xaml.cs",
-              "RelativeToolTip": "AddEditTariffWindow.xaml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAtwCMAAAAUAAAAAAAAAA==",
+              "Title": "AddEditUserPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AddEditUserPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\AddEditUserPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AddEditUserPage.xaml.cs",
+              "RelativeToolTip": "Pages\\AddEditUserPage.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwBcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:27:58.573Z",
+              "WhenOpened": "2025-10-15T21:12:44.93Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddEditMeterWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditMeterWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AddEditMeterWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditMeterWindow.xaml.cs",
-              "RelativeToolTip": "AddEditMeterWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Title": "AddEditTariffPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AddEditTariffPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\AddEditTariffPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AddEditTariffPage.xaml.cs",
+              "RelativeToolTip": "Pages\\AddEditTariffPage.xaml.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAwCYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:27:53.742Z",
+              "WhenOpened": "2025-10-15T21:12:39.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "AddEditMeterPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AddEditMeterPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\AddEditMeterPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AddEditMeterPage.xaml.cs",
+              "RelativeToolTip": "Pages\\AddEditMeterPage.xaml.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T21:12:21.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminUsersPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminUsersPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\AdminUsersPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminUsersPage.xaml.cs",
+              "RelativeToolTip": "Pages\\AdminUsersPage.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAkwFoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T21:12:14.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AddEditApartmentWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml",
+              "RelativeDocumentMoniker": "..\\AddEditApartmentWindow.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml",
+              "RelativeToolTip": "..\\AddEditApartmentWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-15T17:28:41.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddEditTariffWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditTariffWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\AddEditTariffWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditTariffWindow.xaml.cs",
+              "RelativeToolTip": "..\\AddEditTariffWindow.xaml.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAtwCMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T17:27:58.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AddEditMeterWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditMeterWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\AddEditMeterWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditMeterWindow.xaml.cs",
+              "RelativeToolTip": "..\\AddEditMeterWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T17:27:53.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "AddEditApartmentWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AddEditApartmentWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\AddEditApartmentWindow.xaml.cs",
               "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditApartmentWindow.xaml.cs",
-              "RelativeToolTip": "AddEditApartmentWindow.xaml.cs",
+              "RelativeToolTip": "..\\AddEditApartmentWindow.xaml.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:27:44.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T17:27:44.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AddEditUserWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditUserWindow.xaml",
+              "RelativeDocumentMoniker": "..\\AddEditUserWindow.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditUserWindow.xaml",
+              "RelativeToolTip": "..\\AddEditUserWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-15T17:27:08.381Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AddEditUserWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditUserWindow.xaml",
-              "RelativeDocumentMoniker": "AddEditUserWindow.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\AddEditUserWindow.xaml",
-              "RelativeToolTip": "AddEditUserWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T17:27:08.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "LoginPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\LoginPage.xaml",
               "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\LoginPage.xaml",
               "RelativeToolTip": "Pages\\LoginPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-15T17:24:29.099Z",
@@ -165,24 +223,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "AdminMainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\AdminMainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminMainPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\AdminMainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\AdminMainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminMainPage.xaml.cs",
               "RelativeToolTip": "Pages\\AdminMainPage.xaml.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwCgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAewBsAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-15T16:46:03.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "AdminMainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\AdminMainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminMainPage.xaml",
               "RelativeDocumentMoniker": "Pages\\AdminMainPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\AdminMainPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminMainPage.xaml",
               "RelativeToolTip": "Pages\\AdminMainPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-15T16:45:58.767Z",
@@ -190,11 +248,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "AdminUsersPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\AdminUsersPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminUsersPage.xaml",
               "RelativeDocumentMoniker": "Pages\\AdminUsersPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\AdminUsersPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\AdminUsersPage.xaml",
               "RelativeToolTip": "Pages\\AdminUsersPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-15T14:29:43.988Z",
@@ -202,36 +260,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "UserDashboardPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserDashboardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserDashboardPage.xaml",
               "RelativeDocumentMoniker": "Pages\\UserDashboardPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserDashboardPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserDashboardPage.xaml",
               "RelativeToolTip": "Pages\\UserDashboardPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T14:11:52.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T14:11:52.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "UserDashboardPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserDashboardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserDashboardPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\UserDashboardPage.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserDashboardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserDashboardPage.xaml.cs",
               "RelativeToolTip": "Pages\\UserDashboardPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:06:27.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T12:06:27.135Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\App.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-15T12:39:33.028Z",
@@ -239,90 +295,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\App.xaml.cs",
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:39:36.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T12:39:36.117Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "SubmitReadingsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\SubmitReadingsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\SubmitReadingsPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\SubmitReadingsPage.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\SubmitReadingsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\SubmitReadingsPage.xaml.cs",
               "RelativeToolTip": "Pages\\SubmitReadingsPage.xaml.cs",
               "ViewState": "AgIAAJAAAAAAAAAAAAAmwKEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T13:24:13.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SubmitReadingsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\SubmitReadingsPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\SubmitReadingsPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\SubmitReadingsPage.xaml",
-              "RelativeToolTip": "Pages\\SubmitReadingsPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T13:24:08.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserReadingsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserReadingsPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\UserReadingsPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserReadingsPage.xaml",
-              "RelativeToolTip": "Pages\\UserReadingsPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T12:06:52.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserReadingsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserReadingsPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\UserReadingsPage.xaml.cs",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\UserReadingsPage.xaml.cs",
-              "RelativeToolTip": "Pages\\UserReadingsPage.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwC8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:07:14.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EmployeeMetersPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\EmployeeMetersPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\EmployeeMetersPage.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\Pages\\EmployeeMetersPage.xaml",
-              "RelativeToolTip": "Pages\\EmployeeMetersPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T12:07:51.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T13:24:13.594Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "SubmitReadingsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\SubmitReadingsPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\SubmitReadingsPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\SubmitReadingsPage.xaml",
+              "RelativeToolTip": "Pages\\SubmitReadingsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-15T13:24:08.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserReadingsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserReadingsPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\UserReadingsPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserReadingsPage.xaml",
+              "RelativeToolTip": "Pages\\UserReadingsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-15T12:06:52.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserReadingsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserReadingsPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\UserReadingsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\UserReadingsPage.xaml.cs",
+              "RelativeToolTip": "Pages\\UserReadingsPage.xaml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T12:07:14.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EmployeeMetersPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\EmployeeMetersPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\EmployeeMetersPage.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\Pages\\EmployeeMetersPage.xaml",
+              "RelativeToolTip": "Pages\\EmployeeMetersPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-15T12:07:51.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ROMA_W\\Desktop\\ASKUE\\ASKUE\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-15T12:03:24.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T12:03:24.349Z"
             }
           ]
         }
