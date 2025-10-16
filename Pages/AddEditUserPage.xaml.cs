@@ -14,6 +14,7 @@ namespace ASKUE.Pages
     public partial class AddEditUserPage : Page
     {
         private K_Polzovateli _currentUser;
+        // Строка подключения теперь содержит только данные для прямого подключения к SQL
         private string _sqlConnectionString;
 
         public AddEditUserPage(K_Polzovateli user)
@@ -21,7 +22,8 @@ namespace ASKUE.Pages
             InitializeComponent();
             try
             {
-                _sqlConnectionString = "metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=\"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework\"";
+                // Инициализируем строку подключения без метаданных Entity Framework
+                _sqlConnectionString = @"data source=stud-mssql.sttec.yar.ru,38325;persist security info=True;user id=user182_db;password=user182;encrypt=True;trustservercertificate=True;MultipleActiveResultSets=True;";
 
                 LoadRoles();
                 _currentUser = user;
@@ -49,18 +51,26 @@ namespace ASKUE.Pages
             var roles = new List<Role>();
             try
             {
+                // SqlConnection успешно примет исправленную строку
                 using (var connection = new SqlConnection(_sqlConnectionString))
                 {
                     connection.Open();
                     using (var command = new SqlCommand("SELECT rol_id, naimenovaniye FROM K_Roli", connection))
                     using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read()) { roles.Add(new Role { Id = reader.GetInt32(0), Name = reader.GetString(1) }); }
+                        while (reader.Read())
+                        {
+                            roles.Add(new Role { Id = reader.GetInt32(0), Name = reader.GetString(1) });
+                        }
                     }
                 }
                 ComboRole.ItemsSource = roles;
             }
-            catch (Exception ex) { MessageBox.Show("Ошибка загрузки ролей: " + ex.Message); }
+            catch (Exception ex)
+            {
+                // Теперь эта ошибка не должна появляться
+                MessageBox.Show("Ошибка загрузки ролей: " + ex.Message);
+            }
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
@@ -72,6 +82,12 @@ namespace ASKUE.Pages
             {
                 MessageBox.Show("Все поля (кроме пароля при редактировании) должны быть заполнены.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
+            }
+
+            // Привязка выбранной роли
+            if (ComboRole.SelectedItem is Role selectedRole)
+            {
+                _currentUser.id_rol = selectedRole.Id;
             }
 
             // Если это новый пользователь, добавляем его в контекст

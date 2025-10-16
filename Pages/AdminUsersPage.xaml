@@ -27,8 +27,8 @@
         </DataGrid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-            <Button Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click"/>
-            <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click"/>
+            <Button Content="Добавить" Height="30" Name="BtnAdd" Click="BtnAdd_Click"/>
+            <Button Content="Редактировать" Width="110" Name="BtnEdit" Click="BtnEdit_Click"/>
             <Button Content="Удалить" Name="BtnDelete" Click="BtnDelete_Click"/>
         </StackPanel>
     </Grid>

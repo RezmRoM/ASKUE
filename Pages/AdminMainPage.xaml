@@ -49,7 +49,7 @@
                     </ListView>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
                         <TextBlock Name="TextBlockUserCount" VerticalAlignment="Center"/>
-                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddUser" Click="BtnAddUser_Click" Content="Добавить пользователя"/>
+                        <Button HorizontalAlignment="Right" Width="180" Height="30" Margin="20,0,0,0" Name="BtnAddUser" Click="BtnAddUser_Click" Content="Добавить пользователя"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -95,7 +95,7 @@
                     </ListView>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
                         <TextBlock Name="TextBlockApartmentCount" VerticalAlignment="Center"/>
-                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddApartment" Click="BtnAddApartment_Click" Content="Добавить квартиру"/>
+                        <Button Height="30" Width="150" HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddApartment" Click="BtnAddApartment_Click" Content="Добавить квартиру"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -140,7 +140,7 @@
                     </ListView>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
                         <TextBlock Name="TextBlockMeterCount" VerticalAlignment="Center"/>
-                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddMeter" Click="BtnAddMeter_Click" Content="Добавить счетчик"/>
+                        <Button Height="30" Width="150" HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddMeter" Click="BtnAddMeter_Click" Content="Добавить счетчик"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -185,7 +185,7 @@
                     </ListView>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
                         <TextBlock Name="TextBlockTariffCount" VerticalAlignment="Center"/>
-                        <Button HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddTariff" Click="BtnAddTariff_Click" Content="Добавить тариф"/>
+                        <Button Height="30" Width="150" HorizontalAlignment="Right" Margin="20,0,0,0" Name="BtnAddTariff" Click="BtnAddTariff_Click" Content="Добавить тариф"/>
                     </StackPanel>
                 </Grid>
             </TabItem>

@@ -19,8 +19,8 @@
                            VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <TextBlock x:Name="TBlockUserFio" Foreground="White" VerticalAlignment="Center" Margin="0,0,20,0"/>
-                    <Button x:Name="BtnBack" Content="Назад" Width="100" Click="BtnBack_Click" Visibility="Collapsed"/>
-                    <Button x:Name="BtnLogout" Content="Выйти" Width="100" Click="BtnLogout_Click" Visibility="Collapsed"/>
+                    <Button x:Name="BtnBack" Content="Назад" Width="100" Height="30" Click="BtnBack_Click" Visibility="Collapsed"/>
+                    <Button x:Name="BtnLogout" Content="Выйти" Width="100" Height="30" Click="BtnLogout_Click" Visibility="Collapsed"/>
                 </StackPanel>
             </Grid>
         </Border>

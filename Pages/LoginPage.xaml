@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ASKUE.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginPage">
+      Title="Вход в систему">
 
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
@@ -15,7 +15,7 @@
             <TextBox Name="TBoxLogin"/>
             <TextBlock Text="Пароль:" Margin="0,10,0,5"/>
             <PasswordBox Name="PBoxPassword"/>
-            <Button Name="BtnLogin" Content="Войти" Foreground="White" Width="200" HorizontalAlignment="Center" Click="BtnLogin_Click" Margin="0,20,0,0" />
+            <Button Name="BtnLogin" Content="Войти" Height="30" Foreground="White" Width="200" HorizontalAlignment="Center" Click="BtnLogin_Click" Margin="0,20,0,0" />
         </StackPanel>
     </Grid>
 </Page>

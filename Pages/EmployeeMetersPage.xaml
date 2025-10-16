@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Управление тарифами" HorizontalAlignment="Left" Name="BtnGoToTariffs" Click="BtnGoToTariffs_Click"/>
+        <Button Content="Управление тарифами" Height="30" Width="160" HorizontalAlignment="Left" Name="BtnGoToTariffs" Click="BtnGoToTariffs_Click"/>
 
         <DataGrid Name="MetersGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
@@ -28,8 +28,8 @@
         </DataGrid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-            <Button Content="Добавить" Name="BtnAdd" Click="BtnAdd_Click"/>
-            <Button Content="Редактировать" IsEnabled="False"/>
+            <Button Content="Добавить" Height="30" Name="BtnAdd" Click="BtnAdd_Click"/>
+            <Button Content="Редактировать" Width="110" IsEnabled="False"/>
             <Button Content="Удалить" IsEnabled="False"/>
         </StackPanel>
     </Grid>

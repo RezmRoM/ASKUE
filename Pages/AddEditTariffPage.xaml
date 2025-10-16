@@ -10,14 +10,17 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300">
             <TextBlock Text="Тип ресурса:"/>
-            <ComboBox Name="ComboResourceType" DisplayMemberPath="naimenovaniye" SelectedValuePath="tip_resursa_id" SelectedValue="{Binding id_tipa_resursa}"/>
-            <TextBlock Text="Стоимость (в рублях):" Margin="0,10,0,0"/>
+            <ComboBox x:Name="ComboResourceType"
+          DisplayMemberPath="Name"
+          SelectedValuePath="Id"
+          SelectedValue="{Binding id_tipa_resursa}"
+          /><TextBlock Text="Стоимость (в рублях):" Margin="0,10,0,0"/>
             <TextBox Text="{Binding stoimost_za_edinitsu, StringFormat=N2}"/>
             <TextBlock Text="Действует с:" Margin="0,10,0,0"/>
             <DatePicker SelectedDate="{Binding data_nachala_deystviya}"/>
             <TextBlock Text="Действует по (оставить пустым для бессрочного):" Margin="0,10,0,0"/>
             <DatePicker SelectedDate="{Binding data_okonchaniya_deystviya}"/>
-            <Button Content="Сохранить" Click="BtnSave_Click" Margin="0,30,0,0" MinWidth="100"/>
+            <Button Content="Сохранить" Click="BtnSave_Click" Margin="0,30,0,0" Height="30" MinWidth="100"/>
         </StackPanel>
     </Grid>
 </Page>
